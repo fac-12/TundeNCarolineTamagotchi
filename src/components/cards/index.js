@@ -4,7 +4,23 @@ import catty from "../../../public/cats.png"
  export class Card extends React.Component {
 
    state={
-     health: 100,
+     health: 50,
+   }
+   componentDidMount(){
+
+       setInterval(function(){
+         this.setState((props)=>{
+         return {health: this.state.health-1}
+       }, 10000);
+     })
+
+   }
+
+    increment = () => {
+     this.setState((props) => {
+           return { health: this.state.health>=80 ? this.state.health=100 : this.state.health+20 };
+
+         })
    }
 
 
@@ -14,6 +30,9 @@ import catty from "../../../public/cats.png"
         <img src= {catty}></img>
         <h1> great </h1>
         <span> {this.state.health} </span>
+        <div><button onClick={this.increment}>
+          click me
+        </button></div>
       </div>
     )
   }
