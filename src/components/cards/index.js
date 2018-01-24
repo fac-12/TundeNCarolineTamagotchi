@@ -25,12 +25,26 @@ export class Card extends React.Component {
     });
   };
 
+  // setBarWidth = {
+  //   width: "this.state.health",
+  //   height: "30px",
+  //   backgroundColor: "green"
+  // };
+
   render() {
     return (
       <div className="main-display">
         <img src={catty} />
         <h1> great </h1>
         <span> {this.state.health} </span>
+        <div
+          className="health_bar"
+          style={{
+            width: `${this.state.health}%`,
+            height: "30px",
+            backgroundColor: "green"
+          }}
+        />
         <div>
           <button onClick={this.increment}>click me</button>
         </div>
