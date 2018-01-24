@@ -1,0 +1,13 @@
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+ .buttonFeed{
+   height:50px;
+   width:100px;
+   border-radius: 50px;
+   margin-top: 10px;
+   align-self: center;
+   margin-left:100px;
+ }
